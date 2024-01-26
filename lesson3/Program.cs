@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
-            // Hw Обязательное
-            //Hw.Rainbow();
-            //H_W - Дополнительно со *
             Calculator.Run();
+            //Hw.Rainbow();
+            //Hw.Tempreture();
+            //Hw.Season();
+            //Hw.Season2();
+            //Hw.EvenOrOdd();
         }
     }
 }

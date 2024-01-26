@@ -1,6 +1,6 @@
 ﻿namespace lesson3
 {
-    public static class Hw
+    internal static class Hw
     {
         public static void EvenOrOdd()
         {
