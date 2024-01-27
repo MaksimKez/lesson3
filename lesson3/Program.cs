@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Calculator.Run();
+            Calculator_v2.Run();
             //Hw.Rainbow();
             //Hw.Tempreture();
             //Hw.Season();
