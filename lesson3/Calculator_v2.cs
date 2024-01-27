@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,18 +38,48 @@ namespace lesson3
                         case 's': return "s";
                         case '%': return "%";
                         case '=': return "=";
-                        default: continue;
+                        default: Console.WriteLine("Введите оператор корректно"); continue;
                     }
                 }
             }
         }
 
+        private static double Division(double numerator, double denominator)
+        {
+            while (denominator == 0)
+            {
+                Console.WriteLine("Знаменатель не может быть равен нулю!");
+                Console.WriteLine("Далее введите новый знаменатель");
+                Console.WriteLine();
+                denominator = ResetNum(denominator);
+            }
+            return numerator / denominator;
+        }
+
+        private static double Sqrt(double value)
+        {
+            while (value < 0)
+            {
+                Console.WriteLine("Нельзя извлечь корень отрицательного числа");
+                Console.WriteLine("Далее введите новое число");
+                Console.WriteLine();
+                value = GetNum();
+            }
+            return Math.Sqrt(value);
+        }
+
+
         private static double Calculate(double num1, double num2, string operat)
         {
             switch (operat)
             {
-                default:
-                    break;
+                case "+": return num1 + num2 ;
+                case "-": return num1 - num2;
+                case "*": return num1 * num2;
+                case "/": return Division(num1, num2);
+                case "s": return ;      //TODO сделать возможность извлекать корень
+                case "%": return ;
+                default: Console.WriteLine("Введите оператор корректно");
             }
         }
 
@@ -67,6 +98,7 @@ namespace lesson3
                 num2 = ResetNum(num2);
                 result = Calculate(result, num2, operat);
             }
+            result = Calculate(result, num2, operat);
             Console.WriteLine(result);
             //TODO методы для вычислений, поместить их в свич метода Calculate
         }
